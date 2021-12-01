@@ -1,10 +1,18 @@
+<?php
+include  "cnxyallago.php";
+
+
+$requete = "SELECT * FROM admin";
+
+
+$rslt = $mysqli->query($requete) or die ($mysqli->error());
+?>
+
+<!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
-
-
-    
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Liste Activités | Yalla-Go - Interface Admin </title>
     <meta name="description" content="">
@@ -401,35 +409,55 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="product-status-wrap">
-                            <h4>Products List</h4>
-                            <table>
-                                <tr>
-                                    <th>Activité</th>
-                                    <th>Participants</th>
-                                    <th>Prix</th>
-                                    <th>Paramétres</th>
-                                </tr>
-                                <tr>
-                                    <td>Activité 1</td>
-                                    
-                                    <td>50</td>
-                                    <td>$15</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  </button>
-                                        <button data-toggle="tooltip" title="Supprimer" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                
-                                
-                            </table>
-                            <div class="custom-pagination">
-								<ul class="pagination">
-									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">Next</a></li>
-								</ul>
-                                </div>
+                            <div class="review-tab-pro-inner">
+                                <ul id="myTab3" class="tab-review-design">
+                                    <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Ajouter une ctivité</a></li>
+                                </ul>
+                            
+                                <div id="myTabContent" class="tab-content custom-product-edit">
+                                    <div class="product-tab-list tab-pane fade active in" id="description">
+                                        <div class="row">
+                                            
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                    
+                                                        <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Nom Admin">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Nom Activité">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Prix">
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Prénom Admin">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                      <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
+                                                      <input type="text" class="form-control" placeholder="Quantité">
+                                                  </div>
+                                                </div>
+                                            </div>
+                                     
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="text-center custom-pro-edt-ds">
+                                                    <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Enregistrer
+                                                        </button>
+                                                    <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Annuler
+                                                        </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -477,4 +505,3 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </body>
-</html>
