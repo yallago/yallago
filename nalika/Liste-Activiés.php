@@ -1,3 +1,4 @@
+
 <html class="no-js" lang="en">
 
 <head>
@@ -6,7 +7,7 @@
 
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Liste Activités | Yalla-Go - Interface Admin </title>
+    <title>Yallago</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -402,26 +403,41 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Products List</h4>
+                            <h4>Liste des activités</h4>
                             <table>
-                                <tr>
-                                    <th>Activité</th>
-                                    <th>Participants</th>
+                            <?php
+include  "cnxyallago.php";
+
+$requete = "SELECT * FROM activities ";
+
+
+$rslt = $mysqli->query($requete) or die ($mysqli->error());
+
+
+?>
+                                       <tr>
+                                    <th>ID</th>
+                                    <th>Activité</th> 
                                     <th>Prix</th>
-                                    <th>Paramétres</th>
-                                </tr>
-                                <tr>
-                                    <td>Activité 1</td>
-                                    
-                                    <td>50</td>
-                                    <td>$15</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  </button>
-                                        <button data-toggle="tooltip" title="Supprimer" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
+                                    <th>Participants</th>
                                 
-                                
+                                       </tr>
+                                            <?php
+
+while($ligne = $rslt->fetch_assoc())
+    
+{
+    echo '<tr>
+    <td>'.$ligne["id"].'</td>'; 
+    echo '<td>'.$ligne["activity"].'</td>'; 
+    echo '<td>'.$ligne["price"].'</td>';
+    echo '<td>'.$ligne["participants"].'</td>';
+    echo '<td><a href=modifac.php?id='.$ligne["id"].' data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+    <a href=suppact.php?id='.$ligne["id"].' data-toggle="tooltip" title="Supprimer" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></td></tr>';
+      
+}
+?>
+                                        
                             </table>
                             <div class="custom-pagination">
 								<ul class="pagination">
