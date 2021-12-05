@@ -43,3 +43,4 @@ else
 }
 mysqli_close($db); // fermer la connexion
 ?>
+

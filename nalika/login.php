@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Connectez-Vous | Interface Admin </title>
+    <title>Yallago</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -31,6 +31,7 @@
 </head>
 
 <body>
+    
     <div class="color-line"></div>
     <div class="container-fluid">
         <div class="row">
@@ -50,7 +51,7 @@
                 </div>
                 <div class="hpanel">
                     <div class="panel-body">
-                        <form action="Liste-Activiés.php" methode="POST">
+                        <form method="post" action="verification.php" >
                             <div class="form-group">
                                 <label class="control-label" for="username">Nom d'utilisateur</label>
                                 <input type="text" placeholder="Nom d'utilisateur" title="Please enter you username" required="" name="login" id="login" class="form-control">
@@ -61,14 +62,9 @@
                                 <input type="password" title="Please enter your password" placeholder="******" required=""  name="password" id="password" class="form-control">
                                                                 
                             </div>
-                            <input class="btn btn-success btn-block loginbtn" type="submit" id="submit" value="Connexion">
-                            <?php
-                             if(isset($_GET['erreur'])){
-                             $err = $_GET['erreur'];
-                             if($err==1 || $err==2)
-                                echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                               }
-                            ?>
+                            <input class="btn btn-success btn-block loginbtn" type="submit" id="submit" name="submit" value="Connexion">
+                            
+                        
                         </form>
                     </div>
                 </div>
@@ -77,7 +73,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                <p>Copyright © 2021 All rights reserved.</p>
+                <p>Copyright © 2021 Yalla-Go.</p>
             </div>
         </div>
     </div>
