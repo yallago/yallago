@@ -59,12 +59,23 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Mot de passe</label>
+<<<<<<< HEAD:nalika/login.html
+                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                                
+                            </div>
+                            <div class="checkbox login-checkbox">
+                                <label>
+										          <input type="checkbox" class="i-checks"> Restez-Connectez </label>
+                            </div>
+                            <button class="btn btn-success btn-block loginbtn">Connecter</button>
+=======
                                 <input type="password" title="Please enter your password" placeholder="******" required=""  name="password" id="password" class="form-control">
                                                                 
                             </div>
                             <input class="btn btn-success btn-block loginbtn" type="submit" id="submit" name="submit" value="Connexion">
                             
                         
+>>>>>>> e120d247693a785c67964265f2a44f5b65cd365d:nalika/login.php
                         </form>
                     </div>
                 </div>
